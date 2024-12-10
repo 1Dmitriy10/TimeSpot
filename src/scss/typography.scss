@@ -1,0 +1,23 @@
+h1 {
+    @include font(var(--fw-700), clamp-px(28, 31), var(--primary-black), 140%);
+}
+
+h2 {
+    @include font(var(--fw-700), clamp-px(22, 27), var(--primary-black), 140%);
+}
+
+h3 {
+    @include font(var(--fw-700), clamp-px(18, 21), var(--primary-black), 140%);
+}
+
+p {
+    @include font(var(--fw-300), clamp-px(14, 16), var(--primary-black), 140%);
+}
+
+.strong {
+    @include font(var(--fw-700), clamp-px(14, 16), var(--primary-black), 140%);
+}
+
+.btn {
+    @include font(var(--fw-600), clamp-px(14, 18), var(--primary-white), 140%);
+}
