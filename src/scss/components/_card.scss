@@ -1,0 +1,298 @@
+// ========== Карточки туров =============
+.tour__card-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tour__card {
+    flex: 0 1 calc((100% - 3 * 20px) / 4);
+    display: flex;
+    flex-direction: column;
+    border-radius: 32px;
+    border: 1px solid #dfe5e1;
+    position: relative;
+    height: fit-content;
+
+    &:hover {
+        border-bottom: transparent;
+
+        &>.tour__card-content-box>.tour__btn {
+            opacity: 1;
+            padding: 10px;
+            height: fit-content;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .test {
+            bottom: -43px;
+            transition: 0.3s;
+            opacity: 1;
+            z-index: 3;
+        }
+    }
+}
+
+.test {
+    opacity: 0;
+    position: absolute;
+    width: 101%;
+    left: -1px;
+    bottom: 0;
+    height: 70px;
+    background-color: var(--primary-white);
+    border-radius: 0 0 32px 32px;
+    transition: 0.3s;
+    border: 1px solid #dfe5e1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: transparent;
+}
+
+.tour__btn {
+    // height: 0;
+    // padding: 0;
+    // opacity: 0;
+    // transition: 0.3s;
+    // margin-top: 0;
+    // width: 100%;
+    opacity: 1;
+    padding: 10px;
+    height: fit-content;
+    // margin-top: 20px;
+    transition: 0.3s;
+    position: absolute;
+}
+
+.tour__card-img-wrap {
+    width: 100%;
+    height: 278px;
+    position: relative;
+}
+
+.card-img-hit {
+    position: absolute;
+    z-index: 2;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-white);
+    border: 1px solid #dfe5e1;
+    border-radius: 16px;
+    padding: 4px 8px;
+    font-size: clamp-px(14, 16);
+    font-weight: 400px;
+    line-height: 130%;
+}
+
+.tour__card-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 32px 32px 0 0;
+}
+
+.tour__card-content-box {
+    padding: 20px 20px 30px 20px;
+}
+
+.card-img-tag {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 140%;
+    color: var(--primary-color-them);
+    transition: 0.3s;
+    cursor: pointer;
+
+    &::before {
+        content: '\f041';
+        font-family: 'FontAwesome';
+        font-weight: 900;
+        /* Fix version 5.0.9 */
+    }
+
+    &:hover {
+        transition: 0.3s;
+        color: var(--color-them-3);
+    }
+}
+
+.tour__card-img-tag {
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2;
+}
+
+.tour__card-title {
+    color: var(--primary-black);
+    transition: 0.3s;
+    font-size: clamp-px(14, 16);
+    font-weight: 600;
+    line-height: 140%;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    margin-bottom: 5px;
+
+    &:hover {
+        transition: 0.3s;
+        color: var(--primary-color-them);
+
+    }
+}
+
+.tour__card-subtitle {
+    color: var(--primary-black);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 130%;
+    margin-bottom: 10px;
+}
+
+.tour__card-info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 30px;
+}
+
+.tour__card-info-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+
+    &>span {
+        &:first-child {
+            color: #4e5250a3;
+            font-size: 12px;
+        }
+
+        &:last-child {
+            color: #4e5250;
+            font-size: 12px;
+        }
+    }
+}
+
+.tour__price {
+    background-color: #f5f7f6;
+    width: 100%;
+    padding: 5px;
+    border-radius: 5px;
+    color: var(--primary-black);
+    font-size: clamp-px(14, 16);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.level {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.dashed {
+    flex: 1 1 1%;
+    border-bottom: dashed 1px rgba(78, 82, 80, 0.6392156863);
+}
+
+.dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    width: 7px;
+    height: 7px;
+    background-color: var(--color-them-4);
+    margin-top: 3px;
+}
+
+.level-info {
+    margin-top: 3px;
+    border-radius: 100%;
+    width: 15px;
+    height: 15px;
+    background-color: transparent;
+    border: 1px solid var(--primary-color-them);
+    color: var(--primary-color-them);
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+        background-color: var(--primary-color-them);
+        color: var(--primary-white);
+
+        &>.level-info-popup {
+            display: flex;
+        }
+    }
+}
+
+.level-info-popup {
+    display: none;
+    position: absolute;
+    border-radius: 5px;
+    border: 1px solid #dfe5e1;
+    background-color: var(--primary-white);
+    padding: 15px;
+    color: rgba(78, 82, 80, 0.6392156863);
+    max-width: 150px;
+    width: fit-content;
+    right: 0px;
+    top: -155px;
+    z-index: 2;
+}
+
+.tour__pagination {
+    margin-top: clamp-px(30, 50);
+
+}
+
+// ===================Пагинация==========
+.pagination__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+}
+
+.pagination__item-link {
+    border: none;
+    border-radius: 0;
+    padding: 15px;
+    color: #a3a3a3;
+    border-bottom: 1px solid #dfe5e1;
+    cursor: pointer;
+    float: left;
+    height: 56px;
+    padding-top: 16px;
+    text-align: center;
+    transition: 0.3s;
+    width: 56px;
+
+    &:hover {
+        transition: 0.3s;
+        background-color: #dfe5e1;
+    }
+
+    &.active {
+        border-bottom: 2px solid var(--primary-color-them);
+    }
+}
